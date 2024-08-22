@@ -3,8 +3,9 @@
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
-#include "Device.h"
-#include "Window.h"
+#include "E_Device.h"
+#include "E_Window.h"
+#include "E_ValidationLayers.h"
 
 #include <vector>
 
@@ -20,16 +21,10 @@ namespace VulkanPlay
 		void mainLoop();
 		void run();
 	private:
-		bool checkValidationLayerSupport();
-	private:
-		const std::vector<const char*> validationLayers =
-		{
-			"VK_LAYER_KHRONOS_validation"
-		};
-
-		VkInstance instance;
-		Window* window;
-		Device* device;
+		VkInstance m_instance;
+		Window* m_window;
+		Device* m_device;
+		ValidationLayer* m_validationLayers;
 	};
 }
 

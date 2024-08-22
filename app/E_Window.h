@@ -1,11 +1,5 @@
 #pragma once
 
-#ifdef NDEBUG
-const bool enableValidationLayers = false;
-#else
-const bool enableValidationLayers = true;
-#endif
-
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
@@ -22,7 +16,7 @@ namespace VulkanPlay
 		const uint32_t HEIGHT = 600;
 
 	private:
-		GLFWwindow* window;
+		GLFWwindow* m_window;
 	};
 }
 

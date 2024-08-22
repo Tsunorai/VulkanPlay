@@ -10,6 +10,16 @@ project "VulkanPlay"
 
    files { "app/**.h", "app/**.cpp" }
 
+   vpaths {
+       -- Engine
+       ["Source Files/Engine"] = { "app/E_*.cpp", "app/E_*.h" },
+       -- App
+       ["Source Files/App"] = { "app/A_*.cpp", "app/A_*.h" },
+
+       -- Main
+       ["Source Files"] = { "app/Main.cpp" }
+   }
+
    includedirs {
        "lib/glfw/include",
        "lib/glm",

@@ -3,7 +3,8 @@
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
-#include "QueueFamilies.h"
+#include <optional>
+#include <vector>
 
 namespace VulkanPlay
 {
@@ -17,14 +18,16 @@ namespace VulkanPlay
 	class Device
 	{
 	public:
-		Device(VkInstance& instance);
-		bool isDeviceSuitable(VkPhysicalDevice device);
+		Device(VkInstance& m_instance);
+		bool isDeviceSuitable(VkPhysicalDevice m_device);
 	private:
 		void pickPhysicalDevice();
-		QueueFamilyIndices findQueueFamilies(VkPhysicalDevice& device);
+		void createLogicalDevice();
+		QueueFamilyIndices findQueueFamilies(VkPhysicalDevice& phisicalDevice);
 		void findGraphicFamily(std::vector<VkQueueFamilyProperties>& queueFamilies, QueueFamilyIndices& indecies);
 	private:
-		VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
-		VkInstance instance;
+		QueueFamilyIndices m_indices;
+		VkPhysicalDevice m_physicalDevice = VK_NULL_HANDLE;
+		VkInstance m_instance;
 	};
 };

@@ -1,4 +1,4 @@
-#include "Window.h"
+#include "E_Window.h"
 namespace VulkanPlay
 {
 	Window::Window()
@@ -8,17 +8,17 @@ namespace VulkanPlay
 		glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
 		glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
-		window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", nullptr, nullptr);
+		m_window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", nullptr, nullptr);
 	}
 
 	Window::~Window()
 	{
-		glfwDestroyWindow(window);
+		glfwDestroyWindow(m_window);
 	}
 
 	bool Window::windowShouldClose()
 	{
-		return glfwWindowShouldClose(window);
+		return glfwWindowShouldClose(m_window);
 	}
 }
 

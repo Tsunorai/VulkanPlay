@@ -94,17 +94,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="app\App.cpp" />
-    <ClCompile Include="app\Main.cpp" />
-    <ClCompile Include="app\Device.cpp" />
-    <ClCompile Include="app\Window.cpp" />
-    <ClCompile Include="app\QueueFamilies.cpp" />
+    <ClInclude Include="app\A_App.h" />
+    <ClInclude Include="app\E_Device.h" />
+    <ClInclude Include="app\E_ValidationLayers.h" />
+    <ClInclude Include="app\E_Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="app\App.h" />
-    <ClInclude Include="app\Device.h" />
-    <ClInclude Include="app\Window.h" />
-    <ClInclude Include="app\QueueFamilies.h" />
+    <ClCompile Include="app\A_App.cpp" />
+    <ClCompile Include="app\E_Device.cpp" />
+    <ClCompile Include="app\E_ValidationLayers.cpp" />
+    <ClCompile Include="app\E_Window.cpp" />
+    <ClCompile Include="app\Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
