@@ -56,9 +56,13 @@ namespace VulkanPlay
 		createInfo.enabledExtensionCount = static_cast<uint32_t>(extensions.size());
 		createInfo.ppEnabledExtensionNames = extensions.data();
 
+		std::cout << createInfo.enabledExtensionCount << std::endl;
 		m_validationLayers->AddValidationLayerConfig(createInfo);
+		std::cout << createInfo.enabledExtensionCount << std::endl;
+
+
 		VkResult result = vkCreateInstance(&createInfo, nullptr, &m_instance);
-		std::cout << &m_instance << std::endl;
+
 		if (result != VK_SUCCESS)
 		{
 			throw std::runtime_error("failed to create instance!");
